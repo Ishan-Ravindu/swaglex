@@ -1,12 +1,13 @@
 {
   "name": "swaggerhub-tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "General purpose Swagger documentation management tool with web portal",
-  "main": "index.js",
+  "main": "bin/swaggerhub.js",
   "bin": {
-    "swaggerhub": "./index.js"
+    "swaggerhub": "./bin/swaggerhub.js"
   },
   "scripts": {
+    "start": "node bin/swaggerhub.js",
     "test": "jest",
     "lint": "eslint .",
     "format": "prettier --write ."

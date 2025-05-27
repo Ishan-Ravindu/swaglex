@@ -1,4 +1,4 @@
-# SwaggerHub CLI (UNDER DEVELOPMENT)
+# SwaggerHub CLI
 
 A powerful command-line tool for managing and serving Swagger/OpenAPI documentation with a beautiful web portal interface.
 
@@ -49,20 +49,23 @@ Or use the installation script:
 ## Quick Start
 
 1. **Initialize SwaggerHub in your project:**
+
    ```bash
    swaggerhub init
    ```
 
 2. **Add your API documentation:**
+
    ```bash
    # Interactive mode - automatically finds swagger files
    swaggerhub add
-   
+
    # Or specify a file directly
    swaggerhub add ./api/swagger.yaml
    ```
 
 3. **Start the web portal:**
+
    ```bash
    swaggerhub home
    ```
@@ -74,6 +77,7 @@ Or use the installation script:
 ## Commands
 
 ### `swaggerhub init`
+
 Initialize SwaggerHub configuration in the current directory.
 
 ```bash
@@ -81,9 +85,11 @@ swaggerhub init
 ```
 
 **Options:**
+
 - Prompts for project name, default port, and UI theme
 
 ### `swaggerhub add [file]`
+
 Add a Swagger/OpenAPI file to the hub.
 
 ```bash
@@ -98,10 +104,12 @@ swaggerhub add ./swagger.yaml --id my-api --port 3005
 ```
 
 **Options:**
+
 - `-i, --id <id>` - Custom ID for the API
 - `-p, --port <port>` - Custom port for this API
 
 ### `swaggerhub list`
+
 List all registered APIs.
 
 ```bash
@@ -111,6 +119,7 @@ swaggerhub ls
 ```
 
 ### `swaggerhub remove [id]`
+
 Remove an API from the hub.
 
 ```bash
@@ -122,6 +131,7 @@ swaggerhub remove my-api
 ```
 
 ### `swaggerhub serve [id]`
+
 Serve a specific API documentation.
 
 ```bash
@@ -136,11 +146,13 @@ swaggerhub serve my-api --port 4000 --watch --open
 ```
 
 **Options:**
+
 - `-p, --port <port>` - Override default port
 - `-w, --watch` - Watch for file changes
 - `-o, --open` - Open in browser
 
 ### `swaggerhub home`
+
 Start the SwaggerHub home page with all APIs.
 
 ```bash
@@ -154,10 +166,12 @@ swaggerhub home --no-open
 ```
 
 **Options:**
+
 - `-p, --port <port>` - Port for home page (default: 3001)
 - `--no-open` - Don't open browser automatically
 
 ### `swaggerhub validate [id]`
+
 Validate Swagger/OpenAPI specifications.
 
 ```bash
@@ -169,6 +183,7 @@ swaggerhub validate my-api
 ```
 
 ### `swaggerhub bundle <id> [output]`
+
 Bundle a swagger file with all references.
 
 ```bash
@@ -205,6 +220,7 @@ SwaggerHub creates a `.swaggerhub.json` configuration file in your project:
 ## File Detection
 
 SwaggerHub automatically detects files matching these patterns:
+
 - `**/*.swagger.json`
 - `**/*.swagger.yaml`
 - `**/*.swagger.yml`
@@ -230,6 +246,7 @@ The SwaggerHub home page provides:
 SwaggerHub supports both Swagger 2.0 and OpenAPI 3.x specifications:
 
 ### Swagger 2.0
+
 ```yaml
 swagger: "2.0"
 info:
@@ -242,6 +259,7 @@ paths:
 ```
 
 ### OpenAPI 3.x
+
 ```yaml
 openapi: 3.0.0
 info:
@@ -256,16 +274,19 @@ paths:
 ## Development
 
 ### Running Tests
+
 ```bash
 npm test
 ```
 
 ### Linting
+
 ```bash
 npm run lint
 ```
 
 ### Formatting
+
 ```bash
 npm run format
 ```
@@ -273,17 +294,21 @@ npm run format
 ## Troubleshooting
 
 ### Port Already in Use
+
 If you get a port conflict error, you can:
+
 1. Change the default port during `init`
 2. Specify a different port when serving: `swaggerhub serve --port 4000`
 3. Edit the `.swaggerhub.json` file directly
 
 ### File Not Found
+
 - Ensure the swagger file path is correct
 - Check if the file exists using `swaggerhub list`
 - Use `swaggerhub validate` to check for issues
 
 ### API Not Loading
+
 - Verify the swagger/openapi file is valid JSON/YAML
 - Check console for parsing errors
 - Use `swaggerhub validate` to identify issues
