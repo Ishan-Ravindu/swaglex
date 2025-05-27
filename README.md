@@ -1,4 +1,4 @@
-# SwaggerHub CLI
+# SwaggerHub CLI (UNDER DEVELOPMENT)
 
 A powerful command-line tool for managing and serving Swagger/OpenAPI documentation with a beautiful web portal interface.
 
