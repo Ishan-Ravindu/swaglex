@@ -6,5 +6,4 @@ module.exports = {
   serveCommand: require("./serve"),
   homeCommand: require("./home"),
   validateCommand: require("./validate"),
-  bundleCommand: require("./bundle"),
 };

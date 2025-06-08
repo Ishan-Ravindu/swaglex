@@ -23,11 +23,6 @@ class SwaggerService {
       port: options.port || basePort,
     };
   }
-
-  static async bundleApi(apiInfo) {
-    const spec = await parseSwaggerFile(apiInfo.absolutePath);
-    return spec;
-  }
 }
 
 module.exports = SwaggerService;

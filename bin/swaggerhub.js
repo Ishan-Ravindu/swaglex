@@ -9,7 +9,6 @@ const {
   serveCommand,
   homeCommand,
   validateCommand,
-  bundleCommand,
 } = require("../src/commands");
 const { HOMEPAGE_PORT } = require("../src/constants");
 
@@ -62,11 +61,6 @@ program
   .command("validate [id]")
   .description("Validate swagger specifications")
   .action(validateCommand);
-
-program
-  .command("bundle <id> [output]")
-  .description("Bundle a swagger file with all references")
-  .action(bundleCommand);
 
 // Parse arguments
 program.parse(process.argv);
