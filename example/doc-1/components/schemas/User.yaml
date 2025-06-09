@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: Unique identifier for the user
+    example: 1
+  name:
+    type: string
+    description: Full name of the user
+    example: "John Doe"
+  email:
+    type: string
+    format: email
+    description: Email address of the user
+    example: "john@example.com"
+  createdAt:
+    type: string
+    format: date-time
+    description: Timestamp when the user was created
+    example: "2024-01-15T08:30:00Z"
+  updatedAt:
+    type: string
+    format: date-time
+    description: Timestamp when the user was last updated
+    example: "2024-01-15T08:30:00Z"
+required:
+  - id
+  - name
+  - email

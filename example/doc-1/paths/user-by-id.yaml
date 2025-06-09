@@ -1,0 +1,122 @@
+users-by-id:
+  get:
+    summary: Get user by ID
+    description: Returns a single user by their ID
+    operationId: getUserById
+    tags:
+      - users
+    parameters:
+      - name: userId
+        in: path
+        description: ID of the user to retrieve
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      '200':
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yaml#/components/schemas/User'
+      '404':
+        description: User not found
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yaml#/components/schemas/Error'
+      '500':
+        description: Internal server error
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yaml#/components/schemas/Error'
+  
+  put:
+    summary: Update user
+    description: Updates an existing user
+    operationId: updateUser
+    tags:
+      - users
+    parameters:
+      - name: userId
+        in: path
+        description: ID of the user to update
+        required: true
+        schema:
+          type: integer
+          format: int64
+    requestBody:
+      description: Updated user object
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: "John Doe"
+              email:
+                type: string
+                format: email
+                example: "john@example.com"
+            required:
+              - name
+              - email
+    responses:
+      '200':
+        description: User updated successfully
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yaml#/components/schemas/User'
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yaml#/components/schemas/Error'
+      '404':
+        description: User not found
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yaml#/components/schemas/Error'
+      '500':
+        description: Internal server error
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yaml#/components/schemas/Error'
+  
+  delete:
+    summary: Delete user
+    description: Deletes a user from the system
+    operationId: deleteUser
+    tags:
+      - users
+    parameters:
+      - name: userId
+        in: path
+        description: ID of the user to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      '204':
+        description: User deleted successfully
+      '404':
+        description: User not found
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yaml#/components/schemas/Error'
+      '500':
+        description: Internal server error
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yaml#/components/schemas/Error'
