@@ -4,11 +4,11 @@ info:
   version: 1.0.0
   description: |
     This is an example API documentation.
-    
+
     ## Authentication
-    
+
     All endpoints require authentication unless otherwise specified.
-    
+
   contact:
     name: API Support
     email: support@example.com
@@ -376,7 +376,7 @@ components:
           type: array
           items:
             type: string
-          example: ["api-v1", "api-v2"]
+          example: ['api-v1', 'api-v2']
         createdAt:
           type: string
           format: date-time
@@ -385,7 +385,7 @@ components:
           type: string
           format: date-time
           example: '2024-01-15T10:30:00Z'
-    
+
     Product:
       type: object
       properties:
@@ -394,24 +394,24 @@ components:
           example: 1
         name:
           type: string
-          example: "Example Product"
+          example: 'Example Product'
         description:
           type: string
-          example: "This is an example product"
+          example: 'This is an example product'
         price:
           type: number
           format: float
           example: 29.99
         category:
           type: string
-          example: "Electronics"
+          example: 'Electronics'
         stock:
           type: integer
           example: 100
         createdAt:
           type: string
           format: date-time
-    
+
     ProductInput:
       type: object
       required:
@@ -430,7 +430,7 @@ components:
           type: string
         stock:
           type: integer
-    
+
     Pagination:
       type: object
       properties:
@@ -446,7 +446,7 @@ components:
         totalPages:
           type: integer
           example: 10
-    
+
     Error:
       type: object
       properties:
@@ -459,7 +459,7 @@ components:
         details:
           type: object
           description: Additional error details
-  
+
   responses:
     BadRequest:
       description: Bad request
@@ -468,12 +468,12 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
           example:
-            error: "Validation failed"
-            code: "VALIDATION_ERROR"
+            error: 'Validation failed'
+            code: 'VALIDATION_ERROR'
             details:
-              field: "email"
-              message: "Invalid email format"
-    
+              field: 'email'
+              message: 'Invalid email format'
+
     Unauthorized:
       description: Authentication required
       content:
@@ -481,9 +481,9 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
           example:
-            error: "Authentication required"
-            code: "UNAUTHORIZED"
-    
+            error: 'Authentication required'
+            code: 'UNAUTHORIZED'
+
     Forbidden:
       description: Insufficient permissions
       content:
@@ -491,9 +491,9 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
           example:
-            error: "Insufficient permissions"
-            code: "FORBIDDEN"
-    
+            error: 'Insufficient permissions'
+            code: 'FORBIDDEN'
+
     NotFound:
       description: Resource not found
       content:
@@ -501,9 +501,9 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
           example:
-            error: "Resource not found"
-            code: "NOT_FOUND"
-  
+            error: 'Resource not found'
+            code: 'NOT_FOUND'
+
   securitySchemes:
     sessionAuth:
       type: apiKey

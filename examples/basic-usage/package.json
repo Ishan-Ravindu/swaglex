@@ -1,7 +1,7 @@
 {
-  "name": "swagger-docs-project",
+  "name": "swaglex-basic-example",
   "version": "1.0.0",
-  "description": "Swagger API Documentation",
+  "description": "Basic usage example for Swaglex",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,10 +9,10 @@
     "setup": "node setup.js"
   },
   "dependencies": {
-    "swagger-docs-framework": "^1.0.0",
-    "dotenv": "^16.0.0"
+    "swaglex": "file:../../",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
-    "nodemon": "^3.0.0"
+    "nodemon": "^3.0.2"
   }
 }
