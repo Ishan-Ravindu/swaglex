@@ -5,7 +5,7 @@
 [![Node.js CI](https://github.com/swaglex/swaglex/workflows/Node.js%20CI/badge.svg)](https://github.com/swaglex/swaglex/actions)
 [![codecov](https://codecov.io/gh/swaglex/swaglex/branch/main/graph/badge.svg)](https://codecov.io/gh/swaglex/swaglex)
 
-> **Production-ready Swagger documentation framework with enterprise features**
+> **A Swaglex framework currently under development, featuring enterprise-level capabilities.**
 
 Swaglex is a comprehensive, enterprise-grade framework for building and managing Swagger/OpenAPI documentation with advanced authentication, role-based access control, multi-tenancy, and professional deployment features.
 
