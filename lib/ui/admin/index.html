@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - Swagger Docs</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Admin Panel</h1>
+        <nav>
+          <a href="/docs">Documentation</a>
+          <a href="/api/auth/logout">Logout</a>
+        </nav>
+      </header>
+
+      <div class="main-content">
+        <section class="users-section">
+          <div class="section-header">
+            <h2>User Management</h2>
+            <button id="addUserBtn" class="btn btn-primary">Add User</button>
+          </div>
+
+          <div class="users-table">
+            <table id="usersTable">
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Permissions</th>
+                  <th>Last Login</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- Add/Edit User Modal -->
+      <div id="userModal" class="modal">
+        <div class="modal-content">
+          <h3 id="modalTitle">Add User</h3>
+          <form id="userForm">
+            <input type="hidden" id="userId" />
+            <div class="form-group">
+              <label for="userEmail">Email:</label>
+              <input type="email" id="userEmail" required />
+            </div>
+            <div class="form-group">
+              <label for="userPassword">Password:</label>
+              <input type="password" id="userPassword" />
+              <small>Leave blank to keep existing password</small>
+            </div>
+            <div class="form-group">
+              <label for="userRole">Role:</label>
+              <select id="userRole">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="userPermissions">Permissions (comma-separated doc names):</label>
+              <input type="text" id="userPermissions" placeholder="api-v1, api-v2" />
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
